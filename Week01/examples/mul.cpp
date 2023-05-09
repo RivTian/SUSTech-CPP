@@ -1,6 +1,5 @@
 #include "mul.hpp"
 
-int mul(int a, int b)
-{
+auto mul (int a,int b) -> int {
     return a * b;
 }
