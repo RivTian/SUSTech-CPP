@@ -15,12 +15,13 @@ using namespace std;
 int main(int argc, char ** argv)
 {
     size_t nSize = 200000000;
-    float * p1 = new float[nSize](); //the memory is not aligned
-    float * p2 = new float[nSize](); //the memory is not aligned
+    //float * p1 = new float[nSize](); //the memory is not aligned
+    //float * p2 = new float[nSize](); //the memory is not aligned
 
     // // 256bits aligned, C++17 standard
-    // float * p1 = static_cast<float*>(aligned_alloc(256, nSize*sizeof(float))); 
-    // float * p2 = static_cast<float*>(aligned_alloc(256, nSize*sizeof(float)));
+    // 为了对齐 256bits
+    float * p1 = static_cast<float*>(aligned_alloc(256, nSize*sizeof(float)));
+    float * p2 = static_cast<float*>(aligned_alloc(256, nSize*sizeof(float)));
     float result = 0.0f;
 
     p1[2] = 2.3f;
@@ -32,6 +33,8 @@ int main(int argc, char ** argv)
     auto end = std::chrono::steady_clock::now();
     auto duration = 0L;
 
+    // 代码热身？
+    // cache存在冷不命中特性
     result = dotproduct(p1, p2, nSize);
     result = dotproduct(p1, p2, nSize);
 
