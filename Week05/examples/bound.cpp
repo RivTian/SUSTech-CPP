@@ -12,6 +12,6 @@ int main()
     *(p+1) = 4; //out of bound
 
     cout << "num = " << num << endl;
-    
+    // 实际这个代码就是有问题，越界了
     return 0;
 }

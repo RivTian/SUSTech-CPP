@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// for 中的括号保证优先级
 #define PRINT_ARRAY(array, n) \
 for (int idx = 0; idx < (n); idx++) \
     cout << "array[" << idx << "] = " << (array)[idx] << endl;

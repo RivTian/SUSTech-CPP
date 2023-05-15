@@ -16,6 +16,7 @@ int main()
     int another = 2;
     
     //You cannot change the value that p1 points to through p1
+    // 不能透过定义的 const int * 去修改
     const int * p1 = &num;
     *p1 = 3; //error
     num = 3; //okay

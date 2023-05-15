@@ -1,21 +1,19 @@
 #include <iostream>
 #include <float.h>
 
-struct Matrix
-{
+struct Matrix {
     int rows;
     int cols;
-    float * pData;
+    float *pData;
 };
 
-int main()
-{
+int main() {
     using namespace std;
 
-    Matrix matA = {3,4};
+    Matrix matA = {3, 4};
     matA.pData = new float[matA.rows * matA.cols]{1.f, 2.f, 3.f};
 
-    Matrix matB = {4,8};
+    Matrix matB = {4, 8};
     matB.pData = new float[matB.rows * matB.cols]{10.f, 20.f, 30.f};
 
     Matrix matC = {4, 2};
@@ -28,26 +26,34 @@ int main()
     float maxc = FLT_MIN;
 
     //find max value of matA
-    for(int r = 0; r < matA.rows; r++)
-        for (int c = 0; c < matA.cols; c++)
-        {
-            float val = matA.pData[ r * matA.cols + c];
-            maxa = ( maxa > val ? maxa : val);
+    for (int r = 0; r < matA.rows; r++)
+        for (int c = 0; c < matA.cols; c++) {
+            float val = matA.pData[r * matA.cols + c];
+            maxa = (maxa > val ? maxa : val);
         }
 
     //find max value of matB
-
+    for (int r = 0; r < matA.rows; r++)
+        for (int c = 0; c < matA.cols; c++) {
+            float val = matB.pData[r * matB.cols + c];
+            maxb = (maxb > val ? maxb : val);
+        }
 
     //find max value of matC
+    for (int r = 0; r < matA.rows; r++)
+        for (int c = 0; c < matA.cols; c++) {
+            float val = matC.pData[r * matC.cols + c];
+            maxc = (maxc > val ? maxc : val);
+        }
 
     cout << "max(matA) = " << maxa << endl;
     cout << "max(matB) = " << maxb << endl;
     cout << "max(matC) = " << maxc << endl;
 
 
-    delete [] matA.pData;
-    delete [] matB.pData;
-    delete [] matC.pData;
+    delete[] matA.pData;
+    delete[] matB.pData;
+    delete[] matC.pData;
 
     return 0;
 }

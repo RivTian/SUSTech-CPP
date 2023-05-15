@@ -1,21 +1,20 @@
 #include <iostream>
+
 using namespace std;
 
-struct Student
-{
+struct Student {
     char name[4];
     int born;
-    bool male; 
+    bool male;
 };
 
-int main()
-{
+int main() {
     // Part One
     Student students[128];
-    Student * p0 = &students[0];
-    Student * p1 = &students[1];
-    Student * p2 = &students[2];
-    Student * p3 = &students[3];
+    Student *p0 = &students[0];
+    Student *p1 = &students[1];
+    Student *p2 = &students[2];
+    Student *p3 = &students[3];
 
     printf("p0 = %p\n", p0);
     printf("p1 = %p\n", p1);
@@ -27,11 +26,12 @@ int main()
     p1->born = 2000;
 
     // Part Two
+    // same result
     printf("&students = %p\n", &students);
     printf("students = %p\n", students);
     printf("&students[0] = %p\n", &students[0]);
-    
-    Student * p = students;
+
+    Student *p = students;
     p[0].born = 2000;
     p[1].born = 2001;
     p[2].born = 2002;

@@ -1,20 +1,19 @@
 #include <iostream>
 #include <cstring>
+
 using namespace std;
 
-struct Student
-{
+struct Student {
     char name[4];
     int born;
-    bool male; 
+    bool male;
 };
 
-int main()
-{
+int main() {
     Student stu = {"Yu", 2000, true};
-    Student * pStu = &stu;
+    Student *pStu = &stu;
 
-    cout << stu.name << " was born in " << stu.born 
+    cout << stu.name << " was born in " << stu.born
          << ". Gender: " << (stu.male ? "male" : "female") << endl;
 
     strncpy(pStu->name, "Li", 4);
@@ -22,7 +21,7 @@ int main()
     (*pStu).born = 2002;
     pStu->male = false;
 
-    cout << stu.name << " was born in " << stu.born 
+    cout << stu.name << " was born in " << stu.born
          << ". Gender: " << (stu.male ? "male" : "female") << endl;
 
 
@@ -34,6 +33,6 @@ int main()
     cout << "Address of member male: " << &(pStu->male) << endl;
 
     cout << "sizeof(pStu) = " << sizeof(pStu) << endl;
-    
+
     return 0;
 }
