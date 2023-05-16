@@ -16,7 +16,7 @@ class Student
         name = new char[1024]{0};
         born = 0;
         male = false;
-        BMI = 25;//can it be modified?
+        //BMI = 25;//can it be modified?
         cout << "Constructor: Person()" << endl;
     }
     Student(const char * name, int born, bool male)
@@ -41,9 +41,9 @@ class Student
     {
         this->born = born;
     }
-    int getBorn() const
+    int getBorn() const // 不能修改成员变量
     {
-        born++; //Can it be modified?
+        // born++; //Can it be modified?
         return born;
     }
     // the declarations, the definitions are out of the class
