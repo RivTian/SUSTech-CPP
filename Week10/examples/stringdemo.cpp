@@ -1,8 +1,7 @@
 #include <iostream>
 #include <string>
 
-int main()
-{
+int main() {
     std::string s("Hello ");
     s += "C";
     s.operator+=(" and CPP!");
