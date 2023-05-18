@@ -1,22 +1,20 @@
 #include <iostream>
 
-void div2(int n)
-{
-    if( n % 2 != 0)
-    {
+// C++ 管道相关知识补全
+// 14.1 10min
+
+void div2(int n) {
+    if (n % 2 != 0) {
         std::cerr << "Error: The input must be an even number. Here it's " << n << "." << std::endl;
-    }
-    else
-    {
+    } else {
         int result = n / 2;
         std::cout << "Info: The result is " << result << "." << std::endl;
     }
     return;
 }
 
-int main()
-{
-    for(int n = -5; n <= 5; n++)
+int main() {
+    for (int n = -5; n <= 5; n++)
         div2(n);
     return 0;
 }
